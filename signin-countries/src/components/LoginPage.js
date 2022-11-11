@@ -4,8 +4,18 @@ import google from '../images/google.png';
 import twitter from '../images/twitter.png';
 import facebook from '../images/fb.png';
 import illustration from '../images/Illustration.png';
+import { Navigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 function LoginPage() {
+    const navigate = useNavigate();
+    const navigateHome = (e) => {
+        // *** navigate to
+        // navigate('/homepage');
+        // <Navigate to="/homepage" replace={true} />
+        // navigate('/homepage', {replace: true});
+        // e.preventDefault();
+    };
   return (
     <div className="login-page">
       <h1>Sign In</h1>
@@ -21,7 +31,7 @@ function LoginPage() {
           <span className="checkmark"></span>
           Keep me signed in
         </label>
-        <button>Sign In</button>
+          <button onClick={() => <Navigate to="/homepage" replace={true} />}>Sign In</button>
       </div>
         <div className={"alternate-signin"}>
             <h5>---------------- Or Sign In With ----------------</h5>
